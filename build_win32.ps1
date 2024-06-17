@@ -11,7 +11,7 @@ if (-Not $gpp) {
 }
 
 # Compile C++ files
-& g++ .\src\*.cpp -o .\bin\main
+& g++ -I./include src/*.cpp -o ./bin/main
 
 # Check if the compilation was successful
 if ($LASTEXITCODE -ne 0) {
