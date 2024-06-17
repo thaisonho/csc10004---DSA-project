@@ -20,7 +20,7 @@ jobs:
       run: sudo apt-get install g++
 
     - name: Compile C++ files
-      run: g++ ./src/*.cpp -o ./bin/main
+      run: g++ .\src\*.cpp -o .\bin\main
 
     - name: Display bin directory contents
       run: ls -la ./bin
