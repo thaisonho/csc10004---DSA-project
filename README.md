@@ -30,6 +30,12 @@ chmod +x build.sh
 ./build.sh
 ```
 
+## Notes
+
+### For those who using VSCode for debugging this project
+
+I'm using VSCode on Windows 11. I'll put my `.vscode` configs [here](docs/vscode_windows_config.md) if you want a reference for adjusting your config.
+
 ## Authors
 
 * Ân Tiến Nguyên An ([@NguyenAn0808](https://github.com/NguyenAn0808))
