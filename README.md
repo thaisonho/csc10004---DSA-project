@@ -16,6 +16,7 @@ Run building script base on your OS. The execution file will be in `./bin`
 ### For Windows
 
 Run
+
 ``` powershell
 .\build_win32.ps1
 ```
