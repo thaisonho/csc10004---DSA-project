@@ -1,6 +1,7 @@
-#include "../include/foo.h"   
+#include "../include/foo.h" 
 
-int main(int argc, char** argv) {
+using namespace std;
+
+int main() {
     printHello();
-    std::cout << "\n";
 }
