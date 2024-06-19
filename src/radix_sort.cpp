@@ -4,22 +4,23 @@ void __countingSort(int* arr, std::size_t n, int exp)
 {
     int* output = (int*)std::calloc(n, sizeof(int));
     int count[10] = { 0 };
-
-    for (std::size_t i = 0; i < n; ++i) {
+    std::size_t i;
+    int idx;
+    for (i = 0; i < n; ++i) {
         ++count[(arr[i] / exp) % 10];
     }
 
-    for (std::size_t i = 1; i < n; ++i) {
+    for (i = 1; i < 10; ++i) {
         count[i] += count[i - 1];
     }
 
-    for (int i = n - 1; i >= 0; --i) {
+    for (idx = n - 1; i >= 0; --i) {
         int digit = (arr[i] / exp) % 10;
         output[count[digit] - 1] = arr[i];
         count[digit]--;
     }
 
-    for (std::size_t i = 0; i < n; ++i) {
+    for (i = 0; i < n; ++i) {
         arr[i] = output[i];
     }
 
@@ -37,9 +38,8 @@ void __countingSort(int* arr, std::size_t n, int exp, unsigned int& cnt)
         ++count[digit];
     }
 
-    for (std::size_t i = 1; ++cnt && i < n; ++i) {
+    for (std::size_t i = 1; ++cnt && i < 10; ++i) {
         count[i] += count[i - 1];
-        ++cnt;
     }
 
     for (int i = n - 1; ++cnt && i >= 0; --i) {
