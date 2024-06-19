@@ -2,7 +2,7 @@
 
 void __countingSort(int* arr, std::size_t n, int exp)
 {
-    int* output = new int[n];
+    int* output = (int*)std::calloc(n, sizeof(int));
     int count[10] = {0};
 
     for(std::size_t i = 0; i < n; ++i) {
@@ -13,7 +13,7 @@ void __countingSort(int* arr, std::size_t n, int exp)
         count[i] += count[i - 1];
     }
 
-    for(std::size_t i = n - 1; i >= 0; --i) {
+    for(int i = n - 1; i >= 0; --i) {
         int digit = (arr[i] / exp) % 10;
         output[count[digit] - 1] = arr[i];
         count[digit]--;   
@@ -23,13 +23,13 @@ void __countingSort(int* arr, std::size_t n, int exp)
         arr[i] = output[i];
     }
 
-    delete[] output;
+    free(output);
 }
 
 void __countingSort(int* arr, std::size_t n, int exp, unsigned int& cnt)
 {
     cnt = 0;
-    int* output = new int[n];
+    int* output = (int*)std::calloc(n, sizeof(int));
     int count[10] = {0};
 
     for(std::size_t i = 0; ++cnt && i < n; ++i) {
@@ -42,7 +42,7 @@ void __countingSort(int* arr, std::size_t n, int exp, unsigned int& cnt)
         ++cnt;
     }
 
-    for(std::size_t i = n - 1; ++cnt && i >= 0; --i) {
+    for(int i = n - 1; ++cnt && i >= 0; --i) {
         int digit = (arr[i] / exp) % 10;
         output[count[digit] - 1] = arr[i];
         --count[digit];
@@ -52,7 +52,7 @@ void __countingSort(int* arr, std::size_t n, int exp, unsigned int& cnt)
         arr[i] = output[i];
     }
 
-    delete[] output;
+    free(output);
 }
 
 void radixSort(int* arr, std::size_t n)
