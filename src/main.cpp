@@ -1,7 +1,15 @@
 #include "../include/foo.h" 
+#include "../include/algorithms/radix_sort.h" 
+#include <iostream>
+#include "../include/utils/DataGenerator.cpp"
 
 using namespace std;
 
 int main() {
-    printHello();
+    int arr[500];
+    GenerateData(arr, 500, 0);
+    unsigned int cnt_cmp = 0;
+    radixSort(arr, 500, cnt_cmp);
+    for(int i : arr) cout << i << ' ';
+    cout << "\nComparisons: " << cnt_cmp;
 }
