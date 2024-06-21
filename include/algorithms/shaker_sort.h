@@ -2,7 +2,8 @@
 #define SHAKER_SORT_H
 
 #include <cstddef>
+#include <utility>
 
-void shaker_sort(int* arr, std::size_t n);
+void shakerSort(int* arr, std::size_t n);
 
 #endif  //SHAKER_SORT_H
