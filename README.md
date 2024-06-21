@@ -32,7 +32,7 @@ chmod +x build.sh
 
 ## Notes
 
-### For those who using VSCode for debugging this project
+### For those who are using VSCode to debug this project
 
 I'm using VSCode on Windows 11. I'll put my `.vscode` configs [here](docs/vscode_windows_config.md) if you want a reference for adjusting your config.
 
