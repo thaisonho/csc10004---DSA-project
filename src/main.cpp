@@ -1,7 +1,6 @@
-#include "../include/foo.h" 
 #include "../include/algorithms/radix_sort.h" 
-#include <iostream>
 #include "../include/utils/DataGenerator.cpp"
+#include <iostream>
 
 using namespace std;
 
