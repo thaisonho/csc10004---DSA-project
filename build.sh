@@ -3,7 +3,7 @@
 mkdir -p bin
 
 if command -v g++ >/dev/null 2>&1; then
-    g++  g++ -I./include src/*.cpp -o ./bin/main
+    g++ -I./include src/*.cpp -o ./bin/main
     echo "Building complete"
 
 else
