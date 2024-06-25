@@ -1,14 +1,18 @@
-#include "../include/algorithms/radix_sort.h" 
-#include "../include/utils/DataGenerator.cpp"
-#include <iostream>
+#include "DataGenerator.h"
+#include "QuickSort.h"
+#include "radix_sort.h"
+#include "timeBenchmark.h"
+#define ARR_SIZE 100000
 
 using namespace std;
 
 int main() {
-    int arr[500];
-    GenerateData(arr, 500, 0);
-    unsigned int cnt_cmp = 0;
-    radixSort(arr, 500, cnt_cmp);
-    for(int i : arr) cout << i << ' ';
-    cout << "\nComparisons: " << cnt_cmp;
+    // Example
+    int arr[ARR_SIZE], tmp_arr[ARR_SIZE], cnt = 0;
+    // random array
+    GenerateData(arr, ARR_SIZE, 0);
+    memcpy(tmp_arr, arr, ARR_SIZE * sizeof(int));
+    cout << funcRunTime(quickSort, arr, 0, ARR_SIZE) << '\n';
+    quickSort(tmp_arr, 0, ARR_SIZE, cnt);
+    cout << "Comparison in Quicksort: " << cnt;
 }

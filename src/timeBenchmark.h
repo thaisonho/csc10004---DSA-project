@@ -23,5 +23,6 @@ double funcRunTime(void(*func)(int*, std::size_t), int* arr, std::size_t n);
  * @return The runtime of the function in seconds.
  */
 double funcRunTime(void(*func)(int*, int), int* arr, int n);
+double funcRunTime(void(*func)(int*, int, int), int* arr, int l, int r);
 
 #endif  //TIME_BENCHMARK_H
