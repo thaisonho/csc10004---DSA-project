@@ -1,4 +1,4 @@
-#include "../include/algorithms/radix_sort.h"
+#include "radix_sort.h"
 
 void __countingSort(int* arr, std::size_t n, int exp)
 {
