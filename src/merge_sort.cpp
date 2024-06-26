@@ -5,7 +5,7 @@ void Merge(int* arr, int left, int mid, int right) {
     int* temp = new int[right - left + 1];
     int i = left; // flag as the beginning of the first part 
     int j = mid + 1; // flag as the beginning of the second part
-    int k_sz = 0;
+    int k_sz = 0; // size of the temp
 
     while (i <= mid && j <= right) {
         if (arr[i] < arr[j]) {
