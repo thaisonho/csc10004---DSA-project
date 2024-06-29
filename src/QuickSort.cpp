@@ -53,7 +53,7 @@ void quickSort(int* arr, int start, int end)
     quickSort(arr, p + 1, end);
 }
 
-int partition(int* arr, int start, int end, int& count_compare)
+int partition(int* arr, int start, int end, long long& count_compare)
 {
 
     int pivot = arr[start];
@@ -89,7 +89,7 @@ int partition(int* arr, int start, int end, int& count_compare)
     return pivotIndex;
 }
 
-void quickSort(int* arr, int start, int end, int& count_compare)
+void quickSort(int* arr, int start, int end, long long& count_compare)
 {
     // base case
     if (++count_compare && start >= end)
@@ -149,7 +149,7 @@ void quickSort_optimized(int* arr, int left, int right)
     }
 }
 
-int medianOfThree(int* arr, int left, int right, int& count_compare)
+int medianOfThree(int* arr, int left, int right, long long& count_compare)
 {
     int mid = left + (right - left) / 2;
 
@@ -165,7 +165,7 @@ int medianOfThree(int* arr, int left, int right, int& count_compare)
 }
 
 // Hàm phân đoạn mảng
-int partition_optimized(int* arr, int left, int right, int& count_compare)
+int partition_optimized(int* arr, int left, int right, long long& count_compare)
 {
     int pivotIndex = medianOfThree(arr, left, right);
     int pivotValue = arr[pivotIndex];
@@ -182,7 +182,7 @@ int partition_optimized(int* arr, int left, int right, int& count_compare)
     return storeIndex;
 }
 
-void quickSort_optimized(int* arr, int left, int right, int& count_compare)
+void quickSort_optimized(int* arr, int left, int right, long long& count_compare)
 {
     if (++count_compare && left < right) {
         int pivotIndex = partition_optimized(arr, left, right);

@@ -72,7 +72,7 @@ void flashSort(int* arr, int n)
     }
 }
 
-void flashSort(int* arr, int n, int& count_compare)
+void flashSort(int* arr, int n, long long& count_compare)
 {
     if (++count_compare && n == 0) return;
 

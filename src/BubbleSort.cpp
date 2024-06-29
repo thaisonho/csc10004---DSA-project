@@ -9,7 +9,7 @@ void bubbleSort(int* arr, int n)
     }
 }
 
-void bubbleSort(int* arr, int n, int& count_compare)
+void bubbleSort(int* arr, int n, long long& count_compare)
 {
     for (int i = 0; ++count_compare && i < n; i++) {
         for (int j = 0; ++count_compare && j < n - i - 1; j++) {
@@ -39,7 +39,7 @@ void bubbleSort_optimized(int* arr, int n)
     }
 }
 
-void bubbleSort_optimized(int* arr, int n, int& count_compare)
+void bubbleSort_optimized(int* arr, int n, long long& count_compare)
 {
     bool swapped;
 

@@ -26,7 +26,7 @@ void __countingSort(int* arr, std::size_t n, int exp)
     free(output);
 }
 
-void __countingSort(int* arr, std::size_t n, int exp, unsigned int& cnt)
+void __countingSort(int* arr, std::size_t n, int exp, long long& cnt)
 {
     cnt = 0;
     int* output = (int*)std::calloc(n, sizeof(int));
@@ -62,11 +62,11 @@ void radixSort(int* arr, std::size_t n)
     }
 }
 
-void radixSort(int* arr, std::size_t n, unsigned int& cnt)
+void radixSort(int* arr, std::size_t n, long long& cnt)
 {
     cnt = 0;
     int max = *std::max_element(arr, arr + n);
-    unsigned int tmpCnt;
+    long long tmpCnt;
     for (int exp = 1; ++cnt && max / exp > 0; exp *= 10) {
         __countingSort(arr, n, exp, tmpCnt);
         cnt += tmpCnt;

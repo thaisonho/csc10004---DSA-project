@@ -30,7 +30,7 @@ void shakerSort(int* arr, std::size_t n)
     }
 }
 
-void shakerSort(int* arr, std::size_t n, unsigned int& cnt)
+void shakerSort(int* arr, std::size_t n, long long& cnt)
 {
     cnt = 0;
     int leftPtr = 0, rightPtr = n - 1;

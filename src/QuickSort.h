@@ -5,7 +5,7 @@
 
 int partition(int* arr, int start, int end);
 void quickSort(int* arr, int start, int end);
-int partition(int* arr, int start, int end, int& count_compare);
-void quickSort(int* arr, int start, int end, int& count_compare);
+int partition(int* arr, int start, int end, long long& count_compare);
+void quickSort(int* arr, int start, int end, long long& count_compare);
 
 #endif

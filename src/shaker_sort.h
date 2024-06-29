@@ -5,6 +5,6 @@
 #include <utility>
 
 void shakerSort(int* arr, std::size_t n);
-void shakerSort(int* arr, std::size_t n, unsigned int& cnt);
+void shakerSort(int* arr, std::size_t n, long long& cnt);
 
 #endif  //SHAKER_SORT_H
