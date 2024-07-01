@@ -8,15 +8,27 @@ int main(int argc, char *argv[])
     {
         if (argc <= 2) throw -1;
 
-        if (string(argv[1]) == "-a") AlgorithmMode(argc, argv);
-        else if (string(argv[1]) == "-c") ComparisonMode(argc, argv);
+        if (std::string(argv[1]) == "-a")
+        {
+            bool check = AlgorithmMode(argc, argv);
+            if (check == false)
+                 throw -1;
+        }
+        else if (std::string(argv[1]) == "-c")
+        {
+            bool check = ComparisonMode(argc, argv);
+
+            if (check == false)
+                 throw -1;
+        }
         else throw -1;
     }
     catch(int x)
     {
         if (x == -1)
-           cout << "Error: Invalid arguments!" << '\n';
+        {
+            std::cout << "Error: Invalid arguments!" << std::endl;
+        }
     }
-
     return 0;
 }

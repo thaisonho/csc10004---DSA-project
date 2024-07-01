@@ -1,6 +1,6 @@
 #include "output_command.h"
 
-const int Sz = 1e6;
+const int Sz = 1e6 + 5;
 
 int A[Sz];
 int B[Sz];
@@ -244,10 +244,10 @@ void OutputParameter(int type, int A[], int inputSize, const string &sortName)
     }
 }
 
-void AlgorithmMode(int argc, char *argv[])
+bool AlgorithmMode(int argc, char *argv[])
 {
     if (GetSortName(argv[2]) == -1 || GetOutputParameter(argv[argc - 1]) == -1)
-        return;
+        return false;
 
     cout << "ALGORITHM MODE\n";
     cout << "Algorithm: " << Name[GetSortName(argv[2])] << '\n';
@@ -259,10 +259,16 @@ void AlgorithmMode(int argc, char *argv[])
         if (filePath[0] >= '0' && filePath[0] <= '9') // command 3
         {
             int inputSize = stoi(filePath);
+            if (inputSize > 100000)
+                return false;
             cout << "Input size: " << inputSize << '\n';
+
             cout << '\n';
 
             int type = GetOutputParameter(string(argv[argc - 1]));
+
+            if (type == -1)
+                return false;
 
             for (int i = 0; i < 4; i++)
             {
@@ -285,8 +291,7 @@ void AlgorithmMode(int argc, char *argv[])
             cout << "Input file: " << filePath << '\n';
             ifstream inp (filePath);
             if (!inp.is_open())
-                return;
-
+                return false;
 
             int inputSize = 0;
             inp >> inputSize;
@@ -302,6 +307,8 @@ void AlgorithmMode(int argc, char *argv[])
             cout << "-------------------------------------------" << '\n';
 
             int type = GetOutputParameter(argv[argc - 1]);
+            if (type == -1)
+                return false;
 
             OutputParameter(type, A, inputSize, string(argv[2]));
 
@@ -312,10 +319,13 @@ void AlgorithmMode(int argc, char *argv[])
     else if (argc == 6) // Command 2
     {
         int inputSize = stoi(string(argv[3]).c_str());
-        cout << "Input size: " << inputSize << '\n';
-
         int typeOrder = GetInputOrder(string(argv[4]));
+
+        cout << "Input size: " << inputSize << '\n';
         cout << "Input order: " << DataOrder[typeOrder] << '\n';
+
+        if (inputSize > 100000 || typeOrder == -1)
+            return false;
 
         cout << "-------------------------------------------" << '\n';
 
@@ -326,16 +336,19 @@ void AlgorithmMode(int argc, char *argv[])
 
         int type = GetOutputParameter(string(argv[argc - 1]));
 
+        if (type == -1)
+            return false;
+
         OutputParameter(type, A, inputSize, string(argv[2]));
 
         OutputArray("output.txt", A, inputSize);
     }
 }
 
-void ComparisonMode(int argc, char *argv[])
+bool ComparisonMode(int argc, char *argv[])
 {
     if (GetSortName(argv[2]) == -1 || GetSortName(argv[3]) == -1)
-        return;
+        return false;
 
     cout << "COMPARE MODE\n";
     cout << "Algorithm: ";
@@ -344,12 +357,13 @@ void ComparisonMode(int argc, char *argv[])
     if (argc == 5) // Command 4
     {
         string filePath = string(argv[argc - 1]);
+
         cout << "Input file: " << filePath << "\n";
 
         ifstream inp(filePath);
 
         if (!inp.is_open())
-            return;
+            return false;
 
         int inputSize = 0;
         inp >> inputSize;
@@ -379,6 +393,9 @@ void ComparisonMode(int argc, char *argv[])
     {
         int inputSize = stoi(string(argv[argc - 2]));
         int typeOrder = GetInputOrder(string(argv[argc - 1]));
+
+        if (inputSize > 100000 || typeOrder == -1)
+            return false;
 
         cout << "Input size: " << inputSize << "\n";
         cout << "Input order: " << DataOrder[typeOrder] << "\n";

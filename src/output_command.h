@@ -32,5 +32,5 @@ void OutputParameter(int type, int A[], int inputSize, const string &sortName);
 
 void CopyArray(int a[], int b[], int inputSize);
 
-void AlgorithmMode(int argc, char *argv[]);
-void ComparisonMode(int argc, char *argv[]);
+bool AlgorithmMode(int argc, char *argv[]);
+bool ComparisonMode(int argc, char *argv[]);
