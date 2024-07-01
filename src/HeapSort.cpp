@@ -17,20 +17,20 @@ void Heapify(int a[], int n, int index)
     {
         std::swap(a[index], a[largest]);
 
-        HeapifyOptimize(a, n, largest);
+        Heapify(a, n, largest);
     }
 }
 
 void HeapSort(int a[], int n)
 {
     for (int i = n / 2 - 1; i >= 0; i--)
-        HeapifyOptimize(a, n, i);
+        Heapify(a, n, i);
 
     for (int i = n - 1; i > 0; i--)
     {
         std::swap(a[0], a[i]);
 
-        HeapifyOptimize(a, i, 0);
+        Heapify(a, i, 0);
     }
 }
 
@@ -51,20 +51,20 @@ void Heapify(int a[], int n, int index, long long& count_compare)
     {
         std::swap(a[index], a[largest]);
 
-        HeapifyOptimize(a, n, largest, count_compare);
+        Heapify(a, n, largest, count_compare);
     }
 }
 
 void HeapSort(int a[], int n, long long& count_compare)
 {
     for (int i = n / 2 - 1; ++count_compare && i >= 0; i--)
-        HeapifyOptimize(a, n, i, count_compare);
+        Heapify(a, n, i, count_compare);
 
     for (int i = n - 1; ++count_compare && i > 0; i--)
     {
         std::swap(a[0], a[i]);
 
-        HeapifyOptimize(a, i, 0, count_compare);
+        Heapify(a, i, 0, count_compare);
     }
 }
 
