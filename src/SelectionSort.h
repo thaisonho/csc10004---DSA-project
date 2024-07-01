@@ -8,6 +8,5 @@ void SelectionSort(int a[], int n, long long& count_compare);
 
 void SelectionSortOptimize(int a[], int n);
 void SelectionSortOptimize(int a[], int n, long long& count_compare);
-void SelectionSortOptimize2(int a[], int n, long long& count_compare);
 
 #endif
