@@ -11,7 +11,7 @@ if (-Not $gpp) {
 }
 
 # Compile C++ files
-& g++ ./src/*.cpp -o ./bin/main
+& g++ ./src/*.cpp -o ./bin/csc10004_SortingAlgo_win32_x86_64
 
 # Check if the compilation was successful
 if ($LASTEXITCODE -ne 0) {
