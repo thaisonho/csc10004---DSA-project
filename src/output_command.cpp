@@ -343,6 +343,7 @@ bool AlgorithmMode(int argc, char *argv[])
 
         OutputArray("output.txt", A, inputSize);
     }
+    return true;
 }
 
 bool ComparisonMode(int argc, char *argv[])
@@ -415,4 +416,5 @@ bool ComparisonMode(int argc, char *argv[])
         CopyArray(A, B, inputSize);
         OutputComparisons(A, inputSize, argv[3], 1);
     }
+    return true;
 }

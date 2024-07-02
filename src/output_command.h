@@ -1,3 +1,6 @@
+#ifndef OUTPUT_COMMAND_H
+#define OUTPUT_COMMAND_H
+
 #include "SortAlgorithm.h"
 #include "timeBenchmark.h"
 #include "DataGenerator.h"
@@ -34,3 +37,5 @@ void CopyArray(int a[], int b[], int inputSize);
 
 bool AlgorithmMode(int argc, char *argv[]);
 bool ComparisonMode(int argc, char *argv[]);
+
+#endif

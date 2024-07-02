@@ -1,3 +1,6 @@
+#ifndef SORT_ALGORITHM_H
+#define SORT_ALGORITHM_H
+
 #include "BubbleSort.h"
 #include "FlashSort.h"
 #include "HeapSort.h"
@@ -9,3 +12,5 @@
 #include "insertion_sort.h"
 #include "counting_sort.h"
 #include "merge_sort.h"
+
+#endif 
