@@ -259,7 +259,7 @@ bool AlgorithmMode(int argc, char *argv[])
         if (filePath[0] >= '0' && filePath[0] <= '9') // command 3
         {
             int inputSize = stoi(filePath);
-            if (inputSize > 100000)
+            if (inputSize > 1000000)
                 return false;
             cout << "Input size: " << inputSize << '\n';
 
@@ -324,7 +324,7 @@ bool AlgorithmMode(int argc, char *argv[])
         cout << "Input size: " << inputSize << '\n';
         cout << "Input order: " << DataOrder[typeOrder] << '\n';
 
-        if (inputSize > 100000 || typeOrder == -1)
+        if (inputSize > 1000000 || typeOrder == -1)
             return false;
 
         cout << "-------------------------------------------" << '\n';
@@ -395,7 +395,7 @@ bool ComparisonMode(int argc, char *argv[])
         int inputSize = stoi(string(argv[argc - 2]));
         int typeOrder = GetInputOrder(string(argv[argc - 1]));
 
-        if (inputSize > 100000 || typeOrder == -1)
+        if (inputSize > 1000000 || typeOrder == -1)
             return false;
 
         cout << "Input size: " << inputSize << "\n";
